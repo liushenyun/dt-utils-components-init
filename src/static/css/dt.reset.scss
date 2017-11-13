@@ -1,0 +1,56 @@
+@import './dt.reset.color.scss';
+textarea.dt-textarea {
+    padding: 10px 10px 10px 14px;
+    color: $input-color;
+    resize: none;
+    border: 1px solid #B4C6EB;
+    border-radius: 2px;
+}
+
+textarea.dt-textarea::-webkit-input-placeholder {
+    color: $input-placeholder-color;
+}
+
+textarea.dt-textarea::-moz-placeholder {
+    color: $input-placeholder-color;
+}
+
+textarea.dt-textarea::-ms-input-placeholder {
+    color: $input-placeholder-color;
+}
+
+input.dt-input[type='text'],
+input.dt-input[type='password'] {
+    padding: 0 10px;
+    min-width: 90px;
+    width: 100%;
+    min-height: 30px;
+    height: 100%;
+    border-radius: 2px;
+    /* // background: #F9FBFF; */
+    border: 1px solid #bfcbd9;
+    font-size: 14px;
+    outline: none;
+    color: $input-color;
+}
+
+input.dt-input[type='text']::-webkit-input-placeholder,
+input.dt-input[type='password']::-webkit-input-placeholder {
+    font-size: 14px;
+    color: $input-placeholder-color;
+}
+
+
+/*placeholder字体颜色*/
+
+input.dt-input[type='text']::-moz-placeholder,
+input.dt-input[type='password']::-moz-placeholder {
+    font-size: 14px;
+    color: $input-placeholder-color;
+}
+
+input.dt-input[type='text']::-ms-input-placeholder,
+input.dt-input[type='password']::-ms-input-placeholder {
+    font-size: 14px;
+    color: $input-placeholder-color;
+}

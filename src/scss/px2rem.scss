@@ -1,0 +1,4 @@
+$designWidth: 1080; // 设计稿的宽度  结合rem.js
+@function px2rem( $px) {
+    @return $px*320/$designWidth/20+rem;
+}
