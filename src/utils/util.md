@@ -127,9 +127,39 @@ isEmpty(value)
  isNull(value)
 ```
 #### Throttle
-控制回调在特定时间调用的次数
+控制回调在特定时间调用的次数(每多少毫秒调用一次);
+```
+/**
+ * 函数节流
+ * @version 0.0.1
+ * @param { Function } func 要执行的函数
+ * @oaram { number } [wait=0] - 500 多少毫秒执行一次
+ * @oaram options 
+ * @example  click事件  vue methods中
+ * clickAll: Throttle(function(params) {
+ *     console.log(454);
+ *   }, 500),
+ *
+ */
+throttle(func, wait, options);
+```
+
 
 #### Debounce
 事件触发时不会立即激活回调，相反会等待一定得时间并检查相同的事件是否会再次触发。如果是，重置定时器，并再次等待。如果再等待期间没有发生相同事件，就会立即激活回调。（常用在input里）
-#### Immediate
-Immediate 是 立即激活回调，然后等待后续事件在一定时间内触发
+```
+/**
+ * 函数节流
+ * @version 0.0.1
+ * @param { Function } func 要执行的函数
+ * @oaram { number } [wait=0] - 500 多少毫秒执行一次
+ * @oaram options 
+ * @example  click事件  vue methods中
+ * clickAll: debounce(function(params) {
+ *     console.log(454);
+ *   }, 500),
+ *
+ */
+ 
+debounce(func, wait, options)
+```
