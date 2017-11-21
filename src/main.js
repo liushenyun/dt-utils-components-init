@@ -5,7 +5,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 import ajax from './fetch'
-import './static/js/rem'
+import './common/js/filter'
+import './static/js/rem';
 import './config/index';
 Vue.config.productionTip = false;
 

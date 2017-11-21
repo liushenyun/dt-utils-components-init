@@ -6,6 +6,7 @@ import Utils from '../pages/Utils.vue';
 import ComponentShow from "../pages/ComponentShow.vue";
 import DTUtils from "../pages/DTUtils.vue";
 import HttpTest from "../pages/HttpTest.vue";
+import Filter from "../pages/filter.vue";
 
 Vue.use(Router)
 
@@ -33,5 +34,9 @@ export default new Router({
     path: '/http',
     name: 'HttpTest',
     component: HttpTest
+  }, {
+    path: '/filter',
+    name: 'Filter',
+    component: Filter
   }]
 })
