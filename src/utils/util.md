@@ -33,7 +33,7 @@ util.isArray([1,2,3])
 
 
 
-## 功能列表
+## 功能列表(公共)
 - isArray 【判断是不是数组】
 - isObject【判断是否为对象】
 - isEmpty 【判断是否为空】
@@ -41,13 +41,14 @@ util.isArray([1,2,3])
 - Throttle 【函数调频】
 - Debounce 【函数防抖】
 - isMobile 【判断是否为手机号】
-
+- lessThanTenAddZero 【判断值是否小于10，小于10前面补0】
+- getTodayDate 【获取今天日期】
+- getDateFromSomedayWithDistance(someday,n,type = '-') 【获取某天日期前后的任意天数的日期】
 - isNumber 【判断是否为数字（待更新）】
 
-- dtGetToday 【获取今天日期（待更新）】
-- dtGetDateFromToday 【获取从今天到n天前的日期（待更新）】
 
-
+## 功能列表（dt公用）
+- dtIsMac 【判断Mac是否正确】
 
 
 ## 单个说明
@@ -189,3 +190,43 @@ debounce(func, wait, options)
  */
  isPhone(value)
 ```
+#### lessThanTenAddZero
+判断数值是否小于0，小于0在前面补0 
+```
+/**
+ * 判断数值是否小于0，小于0在前面补0 
+ * @version 0.0.1
+ * @param { Number||number-string } num - 1 or '8' or 10
+ * @returns { String } Returns '01' or '12'
+ * @example
+ *
+ * lessThanTenAddZero(10)
+ * // => '10'
+ *
+ * lessThanTenAddZero(2)
+ * // => '02'
+ */
+ lessThanTenAddZero(num)
+```
+#### getTodayDate
+获取今天日期
+```
+/**
+ * 获取今天日期
+ * @version 0.0.1
+ * @param { String } type - '-'||'.'||...
+ * @returns { String } Returns '2017-02-06'
+ * @example
+ *
+ * getTodayDate()
+ * // => '2017-02-06'
+ *
+ * getTodayDate('.')
+ * // => '2017.02.06'
+ */
+ getTodayDate(num)
+```
+
+### getDateFromSomedayWithDistance
+
+

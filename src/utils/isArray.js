@@ -1,5 +1,5 @@
 /**
- * 判断是否为数组 
+ * 判断是否为数组
  * @version 0.0.1
  * @param { any } value - '[]'or ...
  * @returns {boolean} Returns `true` if `value` is an Array, else `false`.

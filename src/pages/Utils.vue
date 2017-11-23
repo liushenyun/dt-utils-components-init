@@ -9,15 +9,20 @@
     <button @click="clickAll">debounce</button>
     <button @click="throttless">throttle</button>
     <button @click="isPhoneActive">isPhone</button>
+    <button @click="lessThanTenAddZero">lessThanTenAddZero</button>
+    <button @click="getTodayDate">getTodayDate</button>
+    <button @click="getDateFromSomedayWithDistance">getDateFromSomedayWithDistance</button>
     
   </div>
 </template>
 
 <script>
 import debounce from "../utils/debounce";
-// import { debounce } from "../utils";
+import { lessThanTenAddZero } from "../utils";
 import throttle from "../utils/throttle";
 import isPhone from "../utils/isPhone.js";
+import getTodayDate from "../utils/getTodayDate.js";
+import getDateFromSomedayWithDistance from "../utils/getDateFromSomedayWithDistance.js";
 export default {
   methods: {
     backHome() {
@@ -33,8 +38,20 @@ export default {
     throttless: throttle(function(params) {
       console.log("three");
     }, 1000),
-    isPhoneActive () {
+    isPhoneActive() {
       console.log(isPhone(1382875866013828758660));
+    },
+    lessThanTenAddZero() {
+      console.log(lessThanTenAddZero(11));
+    },
+    getTodayDate() {
+      console.log(getTodayDate());
+    },
+    getDateFromSomedayWithDistance() {
+      let someday = "2017-11-23";
+      let n = "-5";
+      let type = ".";
+      console.log(getDateFromSomedayWithDistance(someday, n, type));
     }
   },
   mounted() {}

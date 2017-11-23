@@ -1,5 +1,5 @@
 /**
- * 判断是否为空 
+ * 判断是否为空
  * @version 0.0.1
  * @param { any } value - '[]'or ...
  * @returns {boolean} Returns `true` if `value` is an Array, else `false`.
