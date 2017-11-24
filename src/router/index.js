@@ -4,7 +4,6 @@ import Router from 'vue-router'
 import Home from '../pages/Home.vue';
 import Utils from '../pages/Utils.vue';
 import ComponentShow from "../pages/ComponentShow.vue";
-import DTUtils from "../pages/DTUtils.vue";
 import HttpTest from "../pages/HttpTest.vue";
 import Filter from "../pages/filter.vue";
 
@@ -26,10 +25,6 @@ export default new Router({
     path: '/componentshow',
     name: 'ComponentShow',
     component: ComponentShow
-  }, {
-    path: '/dtutils',
-    name: 'DTUtils',
-    component: DTUtils
   }, {
     path: '/http',
     name: 'HttpTest',

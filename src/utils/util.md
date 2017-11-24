@@ -1,5 +1,4 @@
-util
-DT 工具行数
+util 工具行数
 =========================
 ## 使用
 
@@ -28,6 +27,7 @@ util.isArray([1,2,3])
 
 
 ## 注意事项
+- 'deIsMac':文件夹前有dt是dtston特有的。'isArray':没有dt任何地方都可以使用
 - 参考：https://github.com/lodash
 - @version 进行版本说明。0.0.1是开发版本未在项目中使用，修改过就需要加1（例：0.0.2）   ；1.0.0是在项目中使用过，之后每次修改就需要加1（例：1.0.1）
 
@@ -49,6 +49,9 @@ util.isArray([1,2,3])
 
 ## 功能列表（dt公用）
 - dtIsMac 【判断Mac是否正确】
+- dtAes 【Aes加密】- 【aesEncrypt（加密），aesDecrypt（解密）】
+- dtIsVerificationCode 【验证码验证】
+- dtGetUid 【Dtston 微信登陆获取uid、token】
 
 
 ## 单个说明
@@ -228,5 +231,87 @@ debounce(func, wait, options)
 ```
 
 ### getDateFromSomedayWithDistance
+获取某天日期前后的任意天数的日期
+```
+/**
+ * 获取某天日期前后的任意天数的日期
+ * @version 0.0.1
+ * @param { string }
+ * @param { DateString }  someday - 某天的日期  例： 2017-1-30 || 2017.1.30 || 2017/1/30 || new Date()【代表今天】
+ * @param { Number }  n 任意天数的值 正值：someday之后的日期  负值：someday之前的日期
+ * @param { String } [type] 日期连接符
+ * @returns { String } Returns 日期字符串 例：2017-11-13 2017.02.06
+ * @example
+ * getDateFromSomedayWithDistance('2017-11-23',3,'.')
+ * => 2017.11.26
+ * getDateFromSomedayWithDistance('2017.11.23',-3)
+ * => 2017-11-20
+ */
+ getDateFromSomedayWithDistance('2017-11-23',3,'.')
+```
 
+--------------
+## dt单个说明
 
+### dtIsMac
+Dtston Mac验证
+```
+/**
+ * Dtston Mac验证
+ * @version 0.0.1
+ * @param { String } mac - 'EDS5444545AS'
+ * @returns { String || null }  Returns mac字符串 例："EASD56SD9875"
+ * @example
+ * 
+ * dtIsMac('ss')
+ * => false
+ * dtIsMac('EASD56SD9875')
+ * => true
+ */
+ dtIsMac('EASD56SD9875')
+```
+
+### dtAes
+Dtston AES加密
+```
+/**
+ * Dtston AES加密  "每个项目需要有不同的key值"
+ * @version 0.0.1
+ * @example
+ * 
+ * aesEncrypt('123456') 加密
+ * => 'Y+ahQX0nTjpYJeSHV00P0w=='
+ * 
+ * aesDecrypt('Y+ahQX0nTjpYJeSHV00P0w==') 解密
+ * => '123456'
+ */
+ aesEncrypt('123456');
+ aesDecrypt('Y+ahQX0nTjpYJeSHV00P0w==')
+```
+
+### dtIsVerificationCode
+ Dtston 验证码验证
+```
+/**
+ * Dtston 验证码验证
+ * @version 0.0.1
+ * @param { String } code - '012456'
+ * @returns { false || Strng } Returns false or '123456' or null
+ * @example
+ * 
+ * isVerificationCode('4556')
+ * => false
+ */
+ isVerificationCode('4556')
+```
+
+### dtGetUid
+Dtston 微信登陆
+```
+/**
+ * Dtston getUidToken
+ * @version 0.0.1
+ * @returns { Object } args - {uid:'10004',token:'dsldkoe2987dasdkjhjk'}
+ */
+ let UserInfo = dtGetUid()
+```

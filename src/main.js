@@ -5,9 +5,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 import ajax from './fetch'
-import './common/js/filter'
+// import './common/js/filter'
 import './static/js/rem';
 import './config/index';
+import './filter/filter';
 Vue.config.productionTip = false;
 
 Object.assign(Vue.prototype, { $http: ajax })

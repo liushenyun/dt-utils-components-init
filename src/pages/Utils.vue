@@ -12,7 +12,8 @@
     <button @click="lessThanTenAddZero">lessThanTenAddZero</button>
     <button @click="getTodayDate">getTodayDate</button>
     <button @click="getDateFromSomedayWithDistance">getDateFromSomedayWithDistance</button>
-    
+    <button @click="aesEncrypt">加密123456</button>
+    <button @click="aesDecrypt">解密</button>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import throttle from "../utils/throttle";
 import isPhone from "../utils/isPhone.js";
 import getTodayDate from "../utils/getTodayDate.js";
 import getDateFromSomedayWithDistance from "../utils/getDateFromSomedayWithDistance.js";
+import { aesEncrypt, aesDecrypt } from "../utils/dtAes";
 export default {
   methods: {
     backHome() {
@@ -52,6 +54,13 @@ export default {
       let n = "-5";
       let type = ".";
       console.log(getDateFromSomedayWithDistance(someday, n, type));
+    },
+    aesEncrypt() {
+      this.enData = aesEncrypt(123456);
+      console.log(this.enData);
+    },
+    aesDecrypt() {
+      console.log(aesDecrypt(this.enData));
     }
   },
   mounted() {}

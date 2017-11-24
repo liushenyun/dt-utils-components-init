@@ -1,5 +1,6 @@
 /**
  * 获取某天日期前后的任意天数的日期
+ * @version 0.0.1
  * @param { string }
  * @param { DateString }  someday - 某天的日期  例： 2017-1-30 || 2017.1.30 || 2017/1/30 || new Date()【代表今天】
  * @param { Number }  n 任意天数的值 正值：someday之后的日期  负值：someday之前的日期

@@ -1,5 +1,6 @@
 /**
  * 判断是否是电话号码
+ * @version 0.0.1
  * @param { Any } tel - 1382875
  * @returns { String || null }
  */
