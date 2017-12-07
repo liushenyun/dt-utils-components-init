@@ -14,6 +14,10 @@
     <button @click="getDateFromSomedayWithDistance">getDateFromSomedayWithDistance</button>
     <button @click="aesEncrypt">加密123456</button>
     <button @click="aesDecrypt">解密</button>
+    <button @click="openMqtt">连接mqtt</button>
+    <button @click="closeMqtt">关闭mqtt</button>
+    <button @click="formatActive">格式化日期</button>
+    <dt-upload></dt-upload>
   </div>
 </template>
 
@@ -25,6 +29,9 @@ import isPhone from "../utils/isPhone.js";
 import getTodayDate from "../utils/getTodayDate.js";
 import getDateFromSomedayWithDistance from "../utils/getDateFromSomedayWithDistance.js";
 import { aesEncrypt, aesDecrypt } from "../utils/dtAes";
+import { openSocket, closeSocket } from "../utils/dtMqtt";
+import ddateFormat from '../utils/dateFormat';
+// 组件
 export default {
   methods: {
     backHome() {
@@ -61,9 +68,27 @@ export default {
     },
     aesDecrypt() {
       console.log(aesDecrypt(this.enData));
+    },
+    // 打开mqtt
+    openMqtt() {
+      console.log("连接mqtt");
+      openSocket('e0b94da08400', msg => {
+        console.log(msg);
+      });
+    },
+    closeMqtt() {
+      closeSocket();
+    },
+    formatActive() {
+      // let data = ddateFormat(new Date(), 'yyyy-MM-dd');
+      // let data = ddateFormat(new Date('2016-09-02'), 'yyyy-MM-dd');
+      // let data = ddateFormat(new Date('2016-09-02'), 'yyyy-MM-dd hh:mm:ss');
+      let data = ddateFormat(new Date(1512347715000), 'yyyy-MM-dd hh:mm:ss');
+      console.log(data);
     }
   },
-  mounted() {}
+  mounted() {
+  }
 };
 </script>
 

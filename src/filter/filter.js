@@ -24,3 +24,29 @@ Vue.filter('formatDate', function(num, type = '-') {
   let _sec = _today.getSeconds();
   return _year + type + _month + type + _day + ' ' + addZero(_hour) + ':' + addZero(_min) + ':' + addZero(_sec);
 })
+
+// 参考utils
+// 时间过滤器
+function padLeftZero(str) {
+  return ('00' + str).substr(str.length)
+}
+Vue.filter("DateFormat", function(date, fmt) {
+  let _date = new Date(date);
+  if (/(y+)/.test(fmt)) {
+    fmt = fmt.replace(RegExp.$1, (_date.getFullYear() + '').substr(4 - RegExp.$1.length))
+  }
+  let o = {
+    'M+': _date.getMonth() + 1,
+    'd+': _date.getDate(),
+    'h+': _date.getHours(),
+    'm+': _date.getMinutes(),
+    's+': _date.getSeconds()
+  }
+  for (let k in o) {
+    if (new RegExp(`(${k})`).test(fmt)) {
+      let str = o[k] + ''
+      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : padLeftZero(str))
+    }
+  }
+  return fmt
+})

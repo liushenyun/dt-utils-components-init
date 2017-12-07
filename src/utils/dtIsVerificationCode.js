@@ -17,3 +17,5 @@ function isVerificationCode(code) {
   }
   return _code.match(DT_CODE_REG);
 }
+
+export default isVerificationCode

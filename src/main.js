@@ -9,6 +9,8 @@ import ajax from './fetch'
 import './static/js/rem';
 import './config/index';
 import './filter/filter';
+import DtUpload from "./components/upload/index.js";
+Vue.use(DtUpload);
 Vue.config.productionTip = false;
 
 Object.assign(Vue.prototype, { $http: ajax })

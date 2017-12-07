@@ -45,6 +45,7 @@ util.isArray([1,2,3])
 - getTodayDate 【获取今天日期】
 - getDateFromSomedayWithDistance(someday,n,type = '-') 【获取某天日期前后的任意天数的日期】
 - isNumber 【判断是否为数字（待更新）】
+- dateFormat 【日期格式化】
 
 
 ## 功能列表（dt公用）
@@ -211,6 +212,7 @@ debounce(func, wait, options)
  */
  lessThanTenAddZero(num)
 ```
+
 #### getTodayDate
 获取今天日期
 ```
@@ -249,6 +251,28 @@ debounce(func, wait, options)
  */
  getDateFromSomedayWithDistance('2017-11-23',3,'.')
 ```
+
+
+### dateFormat
+格式化日期
+```
+/**
+ * 格式化日期
+ * @version 0.0.1
+ * @param { Date Object } date 日期对象 new Date() || new Date('2016-09-02') || new Date(1512347715000)【时间戳必须是毫秒】....
+ * @param { String } fmt 返回格式 'yyyy-MM-dd hh:mm:ss' || 'yyyy.MM.dd' || ...
+ * @returns { String } 返回的日期 "2017-12-04 08:35:15" || "2017-12-04" || ...
+ * @example
+ * dateFormat(new Date(), 'yyyy-MM-dd')
+ * => "2017-12-07"
+ * dateFormat(new Date('2016-09-02'), 'yyyy.MM.dd hh:mm:ss')
+ * => "2016.09.02 08:00:00"
+ * dateFormat(new Date(1512347715000), 'yyyy-MM-dd hh:mm:ss')
+ * => "2017-12-04 08:35:15"
+ */
+dateFormat(new Date(1512347715000), 'yyyy-MM-dd hh:mm:ss')
+```
+
 
 --------------
 ## dt单个说明
