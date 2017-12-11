@@ -12,13 +12,6 @@ isArray(a) // => true or false
 ```
 
 ##### 整体使用
-
-```
-import util from '../util/index';
-util.isArray([1,2,3])
-```
-or
-
 ```
 import { isArray } from '../util/index.js';
 util.isArray([1,2,3])
