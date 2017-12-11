@@ -17,13 +17,14 @@
     <button @click="openMqtt">连接mqtt</button>
     <button @click="closeMqtt">关闭mqtt</button>
     <button @click="formatActive">格式化日期</button>
+    <button @click="getPCAreadata">获取PC端地区数据</button>
     <dt-upload></dt-upload>
   </div>
 </template>
 
 <script>
 import debounce from "../utils/debounce";
-import { lessThanTenAddZero } from "../utils";
+import { lessThanTenAddZero, DtPCAreaDataPlus, DtPCAreacodeText } from "../utils";
 import throttle from "../utils/throttle";
 import isPhone from "../utils/isPhone.js";
 import getTodayDate from "../utils/getTodayDate.js";
@@ -85,6 +86,10 @@ export default {
       // let data = ddateFormat(new Date('2016-09-02'), 'yyyy-MM-dd hh:mm:ss');
       let data = ddateFormat(new Date(1512347715000), 'yyyy-MM-dd hh:mm:ss');
       console.log(data);
+    },
+    getPCAreadata() {
+      console.log(DtPCAreaDataPlus);
+      console.log(DtPCAreacodeText);
     }
   },
   mounted() {

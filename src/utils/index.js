@@ -13,6 +13,7 @@ import dateFormat from "../utils/dateFormat.js";
 import { aesEncrypt, aesDecrypt } from "../utils/dtAes";
 import dtGetUid from "./dtGetUid";
 import { openSocket, closeSocket } from "../utils/dtMqtt";
+import { DtPCAreaDataPlus, DtPCAreacodeText } from './dtPcAreaDatafitEle';
 // import dtIsMac from '../utils/dtIsMac';
 export {
   isNull,
@@ -31,5 +32,7 @@ export {
   dateFormat,
   // dtIsMac,
   closeSocket,
-  dtGetUid
+  dtGetUid,
+  DtPCAreaDataPlus,
+  DtPCAreacodeText
 };

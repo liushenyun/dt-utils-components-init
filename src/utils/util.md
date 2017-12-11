@@ -46,6 +46,8 @@ util.isArray([1,2,3])
 - getDateFromSomedayWithDistance(someday,n,type = '-') 【获取某天日期前后的任意天数的日期】
 - isNumber 【判断是否为数字（待更新）】
 - dateFormat 【日期格式化】
+- DtPCAreaDataPlus 【适应element-ui 联级选择器地区选择器的数据】
+- DtPCAreacodeText 【根据编码可以获得省市区名字】
 
 
 ## 功能列表（dt公用）
@@ -338,4 +340,21 @@ Dtston 微信登陆
  * @returns { Object } args - {uid:'10004',token:'dsldkoe2987dasdkjhjk'}
  */
  let UserInfo = dtGetUid()
+```
+
+### DtPCAreaDataPlus  DtPCAreacodeText
+```
+/**
+ * @version 0.0.1
+ * 从后台获取地区参数转换成element-ui Cascader 级联选择器需要的数据格式
+ * 参照 https://github.com/Plortinus/element-china-area-data
+ * DtPCAreaDataPlus  完整数据格式 得到的是省市区编码
+ * DtPCAreacodeText  可以根据省市区编码得到省市区名字
+ */
+ * 
+ areaChange(value) {
+    // 北京市 
+    let code = value[0]; // 110000
+    let text = DtPCAreacodeText[code]; // 北京
+  }, 
 ```
