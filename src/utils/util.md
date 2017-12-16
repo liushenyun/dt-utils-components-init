@@ -1,5 +1,8 @@
-util 工具行数
+util 工具函数
 =========================
+[TOC]
+
+
 ## 使用
 
 ##### 单独使用
@@ -12,7 +15,8 @@ isArray(a) // => true or false
 ```
 
 ##### 整体使用
-```
+
+```js
 import { isArray } from '../util/index.js';
 util.isArray([1,2,3])
 ```
@@ -24,45 +28,41 @@ util.isArray([1,2,3])
 - @version 进行版本说明。0.0.1是开发版本未在项目中使用，修改过就需要加1（例：0.0.2）   ；1.0.0是在项目中使用过，之后每次修改就需要加1（例：1.0.1）
 
 
-
 ## 功能列表(公共)
-- isArray 【判断是不是数组】
-- isObject【判断是否为对象】
-- isEmpty 【判断是否为空】
-- isNull 【判断是否为null】
-- Throttle 【函数调频】
-- Debounce 【函数防抖】
-- isPhone 【判断是否为手机号】
-- lessThanTenAddZero 【判断值是否小于10，小于10前面补0】
-- getTodayDate 【获取今天日期】
-- getDateFromSomedayWithDistance(someday,n,type = '-') 【获取某天日期前后的任意天数的日期】
-- isNumber 【判断是否为数字（待更新）】
-- dateFormat 【日期格式化】
+- isArray 【判断是不是数组 ok】
+- isObject【判断是否为对象 ok 】
+- isEmpty 【判断是否为空 ok】
+- isNull 【判断是否为null ok】
+- Throttle 【函数调频 ok】
+- Debounce 【函数防抖 ok】
+- isPhone 【判断是否为手机号 ok】
+- lessThanTenAddZero 【判断值是否小于10，小于10前面补0 ok】
+- getTodayDate 【获取今天日期 ok】
+- getDateFromSomedayWithDistance(someday,n,type = '-') 【ok 获取某天日期前后的任意天数的日期】
+- isNumber 【判断是否为数字（待更新）no】
+- dateFormat 【日期格式化 ok】
 
 
 ## 功能列表（dt公用）
-- dtIsMac 【判断Mac是否正确】
-- dtAes 【Aes加密】- 【aesEncrypt（加密），aesDecrypt（解密）】
-- dtIsVerificationCode 【验证码验证】
-- dtGetUid 【Dtston 微信登陆获取uid、token】
-- dtIsPassword 【Dt验证密码】
-- dtMqtt 【微信端 mqtt】
-- dtPcAreaDataFitEle 【element-ui Cascader 级连地区筛选数据】
-- DtPCAreaDataPlus 【适应element-ui 联级选择器地区选择器的数据】
-- DtPCAreacodeText 【适应element-ui 根据编码可以获得省市区名字】
-- dtWechatOnly 【Dt 限制只能在微信里访问】
-
-[TOC]
+- dtIsMac 【判断Mac是否正确 ok】
+- dtAes 【Aes加密 ok】- 【aesEncrypt（加密），aesDecrypt（解密）】
+- dtIsVerificationCode 【验证码验证 ok】
+- dtGetUid 【Dtston 微信登陆获取uid、token ok】
+- dtIsPassword 【Dt验证密码 no】
+- dtMqtt 【微信端 mqtt no】
+- dtPcAreaDataFitEle 【element-ui Cascader 级连地区筛选数据 ok】
+- DtPCAreaDataPlus 【适应element-ui 联级选择器地区选择器的数据 ok】
+- DtPCAreacodeText 【适应element-ui 根据编码可以获得省市区名字 ok】
+- dtWechatOnly 【Dt 限制只能在微信里访问 no】
 
 ## 单个说明
 
 #### isArray
 判断是不是数组
-```
+```js
 /**
  * @param {string} [somebody=John Doe] - Somebody's name.
  */
-
 
 /**
 * @description 判断是不是数组
@@ -80,7 +80,8 @@ isArray(value)
 ```
 #### isObject
 判断是否为对象
-```
+
+```js
 /**
  * 判断是否为对象
  * @version 0.0.1
@@ -119,7 +120,7 @@ isEmpty(value)
 ```
 #### isNull
 判断是否为null 
-```
+```js
 /**
  * 判断是否为null
  * @version 0.0.1
@@ -135,9 +136,10 @@ isEmpty(value)
  */
  isNull(value)
 ```
+
 #### Throttle
 控制回调在特定时间调用的次数(每多少毫秒调用一次);
-```
+```js
 /**
  * 函数节流
  * @version 0.0.1
@@ -156,7 +158,7 @@ throttle(func, wait, options);
 
 #### Debounce
 事件触发时不会立即激活回调，相反会等待一定得时间并检查相同的事件是否会再次触发。如果是，重置定时器，并再次等待。如果再等待期间没有发生相同事件，就会立即激活回调。（常用在input里）
-```
+```js
 /**
  * 函数防抖
  * @version 0.0.1
@@ -177,7 +179,7 @@ debounce(func, wait, options)
 ```
 #### isPhone
 判断是否为手机号 
-```
+```js
 /**
  * 判断是否为手机号
  * @version 0.0.1
@@ -195,7 +197,7 @@ debounce(func, wait, options)
 ```
 #### lessThanTenAddZero
 判断数值是否小于0，小于0在前面补0 
-```
+```js
 /**
  * 判断数值是否小于0，小于0在前面补0 
  * @version 0.0.1
@@ -214,7 +216,7 @@ debounce(func, wait, options)
 
 #### getTodayDate
 获取今天日期
-```
+```js
 /**
  * 获取今天日期
  * @version 0.0.1
@@ -231,9 +233,9 @@ debounce(func, wait, options)
  getTodayDate(num)
 ```
 
-### getDateFromSomedayWithDistance
+#### getDateFromSomedayWithDistance
 获取某天日期前后的任意天数的日期
-```
+```js
 /**
  * 获取某天日期前后的任意天数的日期
  * @version 0.0.1
@@ -252,9 +254,9 @@ debounce(func, wait, options)
 ```
 
 
-### dateFormat
+#### dateFormat
 格式化日期
-```
+```js
 /**
  * 格式化日期
  * @version 0.0.1
@@ -276,9 +278,9 @@ dateFormat(new Date(1512347715000), 'yyyy-MM-dd hh:mm:ss')
 --------------
 ## dt单个说明
 
-### dtIsMac
+#### dtIsMac
 Dtston Mac验证
-```
+```js
 /**
  * Dtston Mac验证
  * @version 0.0.1
@@ -294,9 +296,9 @@ Dtston Mac验证
  dtIsMac('EASD56SD9875')
 ```
 
-### dtAes
+#### dtAes
 Dtston AES加密
-```
+```js
 /**
  * Dtston AES加密  "每个项目需要有不同的key值"
  * @version 0.0.1
@@ -312,9 +314,9 @@ Dtston AES加密
  aesDecrypt('Y+ahQX0nTjpYJeSHV00P0w==')
 ```
 
-### dtIsVerificationCode
+#### dtIsVerificationCode
  Dtston 验证码验证
-```
+```js
 /**
  * Dtston 验证码验证
  * @version 0.0.1
@@ -328,9 +330,9 @@ Dtston AES加密
  isVerificationCode('4556')
 ```
 
-### dtGetUid
+#### dtGetUid
 Dtston 微信登陆
-```
+```js
 /**
  * Dtston getUidToken
  * @version 0.0.1
@@ -339,8 +341,8 @@ Dtston 微信登陆
  let UserInfo = dtGetUid()
 ```
 
-### DtPCAreaDataPlus  DtPCAreacodeText
-```
+#### DtPCAreaDataPlus  DtPCAreacodeText
+```js
 /**
  * @version 0.0.1
  * 从后台获取地区参数转换成element-ui Cascader 级联选择器需要的数据格式
