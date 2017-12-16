@@ -18,7 +18,6 @@ util.isArray([1,2,3])
 ```
 
 
-
 ## 注意事项
 - 'deIsMac':文件夹前有dt是dtston特有的。'isArray':没有dt任何地方都可以使用
 - 参考：https://github.com/lodash
@@ -33,14 +32,12 @@ util.isArray([1,2,3])
 - isNull 【判断是否为null】
 - Throttle 【函数调频】
 - Debounce 【函数防抖】
-- isMobile 【判断是否为手机号】
+- isPhone 【判断是否为手机号】
 - lessThanTenAddZero 【判断值是否小于10，小于10前面补0】
 - getTodayDate 【获取今天日期】
 - getDateFromSomedayWithDistance(someday,n,type = '-') 【获取某天日期前后的任意天数的日期】
 - isNumber 【判断是否为数字（待更新）】
 - dateFormat 【日期格式化】
-- DtPCAreaDataPlus 【适应element-ui 联级选择器地区选择器的数据】
-- DtPCAreacodeText 【根据编码可以获得省市区名字】
 
 
 ## 功能列表（dt公用）
@@ -48,7 +45,14 @@ util.isArray([1,2,3])
 - dtAes 【Aes加密】- 【aesEncrypt（加密），aesDecrypt（解密）】
 - dtIsVerificationCode 【验证码验证】
 - dtGetUid 【Dtston 微信登陆获取uid、token】
+- dtIsPassword 【Dt验证密码】
+- dtMqtt 【微信端 mqtt】
+- dtPcAreaDataFitEle 【element-ui Cascader 级连地区筛选数据】
+- DtPCAreaDataPlus 【适应element-ui 联级选择器地区选择器的数据】
+- DtPCAreacodeText 【适应element-ui 根据编码可以获得省市区名字】
+- dtWechatOnly 【Dt 限制只能在微信里访问】
 
+[TOC]
 
 ## 单个说明
 
