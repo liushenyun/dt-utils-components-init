@@ -4,7 +4,7 @@
  * @param { Any } psd - 1382875
  * @returns { String || null }
  */
-const DT_PSD_REG = /^\w{6,18}$/ig
+const DT_PSD_REG = /^\w{6,18}$/
 let dtIsPassword = (psd) => {
   if (psd === null || psd === undefined) {
     return false;

@@ -39,7 +39,6 @@ util.isArray([1,2,3])
 - lessThanTenAddZero 【判断值是否小于10，小于10前面补0 ok】
 - getTodayDate 【获取今天日期 ok】
 - getDateFromSomedayWithDistance(someday,n,type = '-') 【ok 获取某天日期前后的任意天数的日期】
-- isNumber 【判断是否为数字（待更新）no】
 - dateFormat 【日期格式化 ok】
 
 
@@ -48,12 +47,12 @@ util.isArray([1,2,3])
 - dtAes 【Aes加密 ok】- 【aesEncrypt（加密），aesDecrypt（解密）】
 - dtIsVerificationCode 【验证码验证 ok】
 - dtGetUid 【Dtston 微信登陆获取uid、token ok】
-- dtIsPassword 【Dt验证密码 no】
-- dtMqtt 【微信端 mqtt no】
+- dtIsPassword 【Dt验证密码 ok】
+- dtMqtt 【微信端 mqtt ok】
 - dtPcAreaDataFitEle 【element-ui Cascader 级连地区筛选数据 ok】
 - DtPCAreaDataPlus 【适应element-ui 联级选择器地区选择器的数据 ok】
 - DtPCAreacodeText 【适应element-ui 根据编码可以获得省市区名字 ok】
-- dtWechatOnly 【Dt 限制只能在微信里访问 no】
+- dtWechatOnly 【Dt 限制只能在微信里访问 ok】
 
 ## 单个说明
 
@@ -142,7 +141,7 @@ isEmpty(value)
 ```js
 /**
  * 函数节流
- * @version 0.0.1
+ * @version 1.0.1
  * @param { Function } func 要执行的函数
  * @oaram { number } [wait=0] - 500 多少毫秒执行一次
  * @oaram options 
@@ -161,7 +160,7 @@ throttle(func, wait, options);
 ```js
 /**
  * 函数防抖
- * @version 0.0.1
+ * @version 1.0.1
  * @param { Function } func 要执行的函数
  * @poaram { number } [wait=0] - 500 多少毫秒执行一次
  * @param { Object } [ options = {} ] - 可选对象
@@ -182,7 +181,7 @@ debounce(func, wait, options)
 ```js
 /**
  * 判断是否为手机号
- * @version 0.0.1
+ * @version 1.0.1
  * @param { any } value - '[]'or ...
  * @returns {boolean} Returns `true` if `value` is an null, else `false`.
  * @example
@@ -200,7 +199,7 @@ debounce(func, wait, options)
 ```js
 /**
  * 判断数值是否小于0，小于0在前面补0 
- * @version 0.0.1
+ * @version 1.0.1
  * @param { Number||number-string } num - 1 or '8' or 10
  * @returns { String } Returns '01' or '12'
  * @example
@@ -219,7 +218,7 @@ debounce(func, wait, options)
 ```js
 /**
  * 获取今天日期
- * @version 0.0.1
+ * @version 1.0.1
  * @param { String } type - '-'||'.'||...
  * @returns { String } Returns '2017-02-06'
  * @example
@@ -238,7 +237,7 @@ debounce(func, wait, options)
 ```js
 /**
  * 获取某天日期前后的任意天数的日期
- * @version 0.0.1
+ * @version 1.0.1
  * @param { string }
  * @param { DateString }  someday - 某天的日期  例： 2017-1-30 || 2017.1.30 || 2017/1/30 || new Date()【代表今天】
  * @param { Number }  n 任意天数的值 正值：someday之后的日期  负值：someday之前的日期
@@ -259,7 +258,7 @@ debounce(func, wait, options)
 ```js
 /**
  * 格式化日期
- * @version 0.0.1
+ * @version 1.0.1
  * @param { Date Object } date 日期对象 new Date() || new Date('2016-09-02') || new Date(1512347715000)【时间戳必须是毫秒】....
  * @param { String } fmt 返回格式 'yyyy-MM-dd hh:mm:ss' || 'yyyy.MM.dd' || ...
  * @returns { String } 返回的日期 "2017-12-04 08:35:15" || "2017-12-04" || ...
@@ -283,7 +282,7 @@ Dtston Mac验证
 ```js
 /**
  * Dtston Mac验证
- * @version 0.0.1
+ * @version 1.0.1
  * @param { String } mac - 'EDS5444545AS'
  * @returns { String || null }  Returns mac字符串 例："EASD56SD9875"
  * @example
@@ -301,7 +300,7 @@ Dtston AES加密
 ```js
 /**
  * Dtston AES加密  "每个项目需要有不同的key值"
- * @version 0.0.1
+ * @version 1.0.1
  * @example
  * 
  * aesEncrypt('123456') 加密
@@ -319,7 +318,7 @@ Dtston AES加密
 ```js
 /**
  * Dtston 验证码验证
- * @version 0.0.1
+ * @version 1.0.1
  * @param { String } code - '012456'
  * @returns { false || Strng } Returns false or '123456' or null
  * @example
@@ -335,16 +334,49 @@ Dtston 微信登陆
 ```js
 /**
  * Dtston getUidToken
- * @version 0.0.1
+ * @version 1.0.1
  * @returns { Object } args - {uid:'10004',token:'dsldkoe2987dasdkjhjk'}
  */
  let UserInfo = dtGetUid()
+```
+#### dtIsPassword
+Dtston 判断登陆密码是否正确
+
+```js
+/**
+ * 判断登陆密码是否正确
+ * @version 0.0.1
+ * @param { Any } psd - 1382875
+ * @returns { String || null }
+ * @example
+ * dtIsPassword("dskjhh23786");
+ * => true
+ */
+dtIsPassword('45445464dds');
+```
+#### dtMqtt
+Dtston  wechat mqtt
+```js
+/**
+ * Dtston  wechat mqtt
+ * @version 1.0.1
+ * 需要mqtt插件：npm install mqtt --sava
+ * 测试地址：http://testfiles.ourslinks.com:8080/
+ * 测试的时候可以:
+ * 主题：dt2014/web/e0b94da08400
+ * 要发送的消息结构：{"project":"yiannuo","type":"status","data":{"refrigerate_switch":"1","today_make_water":"20","total_make_water":"56","raw_water":100,"pure_water":80}}
+ * import { closeSocket, openSocket } from "../utils/dtMqtt.js";
+ * 方法：openSocket() =>连接mqtt
+ * 方法：closeSocket() => 关闭mqtt 防止浪费资源
+ */
+openSocket("AB45sd56s587s55"); // 连接mqtt
+closeSocket(); // 关闭mqtt
 ```
 
 #### DtPCAreaDataPlus  DtPCAreacodeText
 ```js
 /**
- * @version 0.0.1
+ * @version 1.0.1
  * 从后台获取地区参数转换成element-ui Cascader 级联选择器需要的数据格式
  * 参照 https://github.com/Plortinus/element-china-area-data
  * DtPCAreaDataPlus  完整数据格式 得到的是省市区编码
@@ -356,4 +388,16 @@ Dtston 微信登陆
     let code = value[0]; // 110000
     let text = DtPCAreacodeText[code]; // 北京
   }, 
+```
+
+### dtWechatOnly
+只允许在微信端登陆
+```js
+/**
+ * 只允许在微信端登陆，在已进入调用次方法即可
+ * @version 1.0.1
+ * @example
+ * weChatOnly();
+ */
+weChatOnly();
 ```

@@ -26,7 +26,11 @@ Vue.filter('formatDate', function(num, type = '-') {
 })
 
 // 参考utils
-// 时间过滤器
+/**
+ * 时间过滤器
+ * @example
+ * {{1565687545*1000|dateFormat('yyyy-MM-dd hh:mm:ss')}}
+ */
 function padLeftZero(str) {
   return ('00' + str).substr(str.length)
 }
