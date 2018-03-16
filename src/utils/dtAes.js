@@ -9,11 +9,22 @@
  */
 import GibberishAES from './plugin/gibberish-aes';
 // let key = [50, 51, 102, 101, 102, 101, 99, 50, 97, 55, 99, 52, 97, 49, 101, 100, 101, 57, 101, 54, 48, 51, 51, 57, 57, 54, 51, 56, 99, 54, 55, 48];
-let key = require('../../apiConfig').key;
+// ket = 'dslkdjslyewsafhladifew45'
+const key = require('../../apiConfig').aesKey; // 【获取key值】
+const stringKey = key => key.map(v => String.fromCharCode(v)).join(''); // ascII码 => 字符串
+
+let trueKey;
+// eslint-disable-next-line
+if ((typeof key) === 'string') {
+  trueKey = key; // aesKey是字符串
+} else {
+  trueKey = stringKey(key); // aesKey是数组
+}
+
 // aes加密
-const aesEncrypt = item => GibberishAES.aesEncrypt(item, key).trim();
+const aesEncrypt = item => GibberishAES.aesEncrypt(item, trueKey).trim();
 // aes解密
-const aesDecrypt = item => GibberishAES.aesDecrypt(item, key);
+const aesDecrypt = item => GibberishAES.aesDecrypt(item, trueKey);
 
 export {
   aesEncrypt,

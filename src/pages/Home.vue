@@ -4,8 +4,8 @@
     <h4>(components/utils/dtutils/filter)</h4>
     <p>这是首页</p>
     <button @click="toUtilsPage">去往utils</button>
-    <button @click="toDtUtils">去往dt-utils</button>
     <button @click="toComponentsShow">去组件展示区</button>
+    <button @click="toUploadShow">去上传文件</button>
     <button @click="httpRequest">http请求</button>
     <button @click="toFilter">to filter</button>
   </div>
@@ -22,8 +22,10 @@ export default {
         name: "ComponentShow"
       });
     },
-    toDtUtils() {
-      this.$router.push({ name: "DTUtils" });
+    toUploadShow() {
+      this.$router.push({
+        name: "Upload"
+      });
     },
     httpRequest() {
       this.$router.push({ name: "HttpTest" });

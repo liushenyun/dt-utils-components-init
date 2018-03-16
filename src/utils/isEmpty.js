@@ -15,6 +15,9 @@
  * // => true
  */
 let isEmpty = function(str) {
+  if (str === undefined) {
+    return true
+  };
   let strs = str.toString(); // 防止传入的是数字
   strs = strs.trim();
   if (strs === undefined) {

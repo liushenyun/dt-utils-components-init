@@ -5,8 +5,21 @@
  * DtPCAreaDataPlus  完整数据格式 得到的是省市区编码
  * DtPCAreacodeText  可以根据省市区编码得到省市区名字
  */
-import { DtAreaDataPlus, DtAreacodeText } from "./PcAreaData/DtAreaTransfromDataFitElementUi";
-export {
-  DtAreaDataPlus as DtPCAreaDataPlus,
-  DtAreacodeText as DtPCAreacodeText
+import DtAreaDataGetFun from "./PcAreaData/DtAreaTransfromDataFitElementUi";
+import DtPCAreaDataPlus from './PcAreaData/DtPCAreaDataPlusHasAll';
+import DtPCAreaDataPlusNoneAll from './PcAreaData/DtPCAreaDataPlusNoneAll';
+import DtPCAreaCodeText from './PcAreaData/DtPCAreacodeTextStatic';
+const DtPCAreaDataPlusAccordAll = (needAll = true) => {
+  if (needAll) {
+    return DtPCAreaDataPlus
+  } else {
+    return DtPCAreaDataPlusNoneAll
+  }
 }
+export {
+  DtAreaDataGetFun,
+  DtPCAreaDataPlus,
+  DtPCAreaCodeText,
+  DtPCAreaDataPlusNoneAll,
+  DtPCAreaDataPlusAccordAll
+};

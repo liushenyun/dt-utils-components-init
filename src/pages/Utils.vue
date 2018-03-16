@@ -18,13 +18,15 @@
     <button @click="closeMqtt">关闭mqtt</button>
     <button @click="formatActive">格式化日期</button>
     <button @click="getPCAreadata">获取PC端地区数据</button>
+    <button @click="judegeEmail">判断邮箱</button>
     <dt-upload></dt-upload>
   </div>
 </template>
 
 <script>
 import debounce from "../utils/debounce";
-import { lessThanTenAddZero, DtPCAreaDataPlus, DtPCAreacodeText } from "../utils";
+import { lessThanTenAddZero } from "../utils";
+import { DtPCAreaDataPlusNoneAll, DtPCAreaCodeText } from "../utils/dtPcAreaDatafitEle";
 import throttle from "../utils/throttle";
 import isPhone from "../utils/isPhone.js";
 import getTodayDate from "../utils/getTodayDate.js";
@@ -32,6 +34,7 @@ import getDateFromSomedayWithDistance from "../utils/getDateFromSomedayWithDista
 import { aesEncrypt, aesDecrypt } from "../utils/dtAes";
 import { openSocket, closeSocket } from "../utils/dtMqtt";
 import ddateFormat from '../utils/dateFormat';
+import isEmail from '../utils/isEmail';
 // 组件
 export default {
   methods: {
@@ -52,7 +55,7 @@ export default {
       console.log(isPhone(1382875866013828758660));
     },
     lessThanTenAddZero() {
-      console.log(lessThanTenAddZero(11));
+      console.log(lessThanTenAddZero(11))
     },
     getTodayDate() {
       console.log(getTodayDate());
@@ -88,8 +91,12 @@ export default {
       console.log(data);
     },
     getPCAreadata() {
-      console.log(DtPCAreaDataPlus);
-      console.log(DtPCAreacodeText);
+      console.log(DtPCAreaDataPlusNoneAll);
+      console.log(DtPCAreaCodeText);
+    },
+    judegeEmail() {
+      let eim = ''
+      console.log(isEmail(eim));
     }
   },
   mounted() {

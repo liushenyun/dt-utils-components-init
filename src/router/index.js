@@ -3,6 +3,7 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Home from '../pages/Home.vue';
 import Utils from '../pages/Utils.vue';
+import Upload from '../pages/Upload.vue';
 import ComponentShow from "../pages/ComponentShow.vue";
 import HttpTest from "../pages/HttpTest.vue";
 import Filter from "../pages/filter.vue";
@@ -33,5 +34,9 @@ export default new Router({
     path: '/filter',
     name: 'Filter',
     component: Filter
+  }, {
+    path: '/upload',
+    name: 'Upload',
+    component: Upload
   }]
 })

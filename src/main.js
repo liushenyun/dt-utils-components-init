@@ -9,6 +9,11 @@ import ajax from './fetch'
 import './static/js/rem';
 import './config/index';
 import './filter/filter';
+import install from "./filter/install.js";
+Vue.use(install);
+// 用法
+// console.log(122, this.$utils.coB);
+// console.log(123, this.$utils.coA());
 import DtUpload from "./components/upload/index.js";
 Vue.use(DtUpload);
 Vue.config.productionTip = false;

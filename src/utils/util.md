@@ -40,6 +40,8 @@ util.isArray([1,2,3])
 - getTodayDate 【获取今天日期 ok】
 - getDateFromSomedayWithDistance(someday,n,type = '-') 【ok 获取某天日期前后的任意天数的日期】
 - dateFormat 【日期格式化 ok】
+- isEmail 【判断是否为邮箱 ok】
+- formatParams 【格式化参数对象 ok】
 
 
 ## 功能列表（dt公用）
@@ -271,6 +273,39 @@ debounce(func, wait, options)
  * => "2017-12-04 08:35:15"
  */
 dateFormat(new Date(1512347715000), 'yyyy-MM-dd hh:mm:ss')
+```
+
+
+#### isEmail
+格式化日期
+```js
+/**
+ * 判断是否为邮箱
+ * @version 0.0.1
+ * @param { any } value - '[]'or ...
+ * @returns {boolean} Returns `true` if `value` is an Array, else `false`.
+ * @example
+ *
+ * isEmail(12@qq.com)
+ * // => true
+ *
+ * isEmail(123)
+ * // => false
+ */
+isEmail('123@qq.com')
+```
+#### formatParams
+格式化参数对象
+```js
+/**
+ * 格式化参数对象，去掉参数对象value为空的属性
+ * @param { Object } params - { 'device_id': '', 'mac': 'EASF450'  }
+ * @returns { Object } - { 'mac': EASF450 }
+ * @example
+ * formatParams({ 'device_id': '', 'mac': 'EASF450'  })
+ * // => { 'mac': 'EASF450' }
+ */
+formatParams({ 'device_id': '', 'mac': 'EASF450'  })
 ```
 
 

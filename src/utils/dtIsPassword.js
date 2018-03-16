@@ -3,6 +3,7 @@
  * @version 0.0.1
  * @param { Any } psd - 1382875
  * @returns { String || null }
+ * [^A-Za-z0-9_]
  */
 const DT_PSD_REG = /^\w{6,18}$/
 let dtIsPassword = (psd) => {

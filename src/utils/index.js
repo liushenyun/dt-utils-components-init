@@ -9,6 +9,8 @@ import lessThanTenAddZero from './lessThanTenAddZero';
 import getDateFromSomedayWithDistance from "../utils/getDateFromSomedayWithDistance.js";
 import getTodayDate from "../utils/getTodayDate.js";
 import dateFormat from "../utils/dateFormat.js";
+import isEmail from '../utils/isEmail';
+import formatParams from '../utils/formatParams';
 // dt
 import { aesEncrypt, aesDecrypt } from "../utils/dtAes";
 import dtGetUid from "./dtGetUid";
@@ -30,6 +32,8 @@ export {
   aesDecrypt,
   openSocket,
   dateFormat,
+  isEmail,
+  formatParams,
   // dtIsMac,
   closeSocket,
   dtGetUid,
